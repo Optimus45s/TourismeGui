@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ACCEUIL | TourismeGui </title>
+    <style>
+        body{
+            background-color: rgb(9, 8, 8);
+            color: rgb(9, 9, 226);
+        }
+        .nav{
+            position: relative;
+            text-align: center;
+        }
+        .nav li{
+            text-decoration: none;
+            display: inline;
+            margin: 0 8em 0 8em;
+        }
+        .nav a{
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .nav a:hover{
+            color: chocolate;
+            box-shadow: 6px 6px olivedrab;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <li><a href="{% url 'blog:blog_index'  %}">Blog</a></li>
+        <li><a href="{% url 'destination:destination_index' %}">Destination</a></li>
+        <li><a href="{% url 'compte:compte_index' %}">Compte</a></li>
+    </div>
+</body>
+</html>

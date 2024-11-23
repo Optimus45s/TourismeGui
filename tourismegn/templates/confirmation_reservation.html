@@ -1,9 +1,0 @@
-<!-- confirmation_reservation.html -->
-
-{% extends "base_generic.html" %}
-
-{% block content %}
-    <h1>Réservation Confirmée!</h1>
-    <p>Merci {{ reservation.utilisateur.username }} pour votre réservation à {{ reservation.hotel.nom }}.</p>
-    <p>Date de début : {{ reservation.date_debut }} | Date de fin : {{ reservation.date_fin }}</p>
-{% endblock %}

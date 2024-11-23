@@ -15,24 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from tourismegn import views
+from django.urls import path, re_path, include
+from . import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('recherche/', views.recherche, name='recherche'),
-    path('destinations/', views.destinations, name='destinations'),
-    path('destination/<int:site_id>/', views.site_detail, name='site_detail'),
-    path('reserver_hotel/<int:hotel_id>/', views.reserver_hotel, name='reserver_hotel'),
-    path('reserver/', views.reserver, name='reserver'),
-    path('reservation-success/', views.reservation_success, name='reservation_success'),
-    path('reservation/', views.reserver_hotel, name='reservation'),
-    path('inscription/', views.inscription, name='inscription'),
-    path('mon_compte/', views.mon_compte, name='mon_compte'),
-    path('listes_sites/', views.listes_sites, name='listes_sites'),
-    path('confirmation_reservation/<int:reservation_id>/', views.confirmation_reservation, name='confirmation_reservation'),
-    path('hotels/', views.hotels, name='hotels'),
-    path('search/', views.search, name='search'),
-    path('blog/', views.blog, name='blog'),
+    path('',views.index,name='index'),
+    path('blog/', include('blog.urls')),
+    path('compte/', include('compte.urls')),
+    path('destination/', include('destination.urls')),
 ]
