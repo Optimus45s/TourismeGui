@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Destinations</h1>
+
+    {% if sites %}
+        <ul>
+            {% for site in sites %}
+                <li>{{ site.name }} - {{ site.description }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun site disponible.</p>
+    {% endif %}
+    
+    <form method="get" action="">
+        <label for="type_site">Filtrer par type de site:</label>
+        <select name="type_site" id="type_site">
+            <option value="">Tous les types</option>
+            <option value="type1">Naturel</option>
+            <option value="type2">Culturel</option>
+        </select>
+        <button type="submit">Filtrer</button>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header>
+        <h1>Réservez votre expérience</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Formulaire de réservation</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Réserver</button>
+            </form>
+        </section>
+        <section>
+            <a href="{% url 'home' %}">Retour à l'accueil</a>
+        </section>
+    </main>
+{% endblock %}
