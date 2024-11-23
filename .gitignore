@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+.vscode
+__init__.py
+wsgi.py
+asgi.py
+tests.py
